@@ -2,7 +2,9 @@ package com.example.notification
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import com.google.firebase.iid.FirebaseInstanceId
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnSend: Button
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         btnSend.setOnClickListener {
             this.showNotification("1234", "Bootcamp Android", "Kotlin Android - Curso")
         }
+        Log.i("**newTolen", FirebaseInstanceId.getInstance().token.toString())
     }
 
 
